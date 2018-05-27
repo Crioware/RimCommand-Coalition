@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+	<!-- Gatling Turret -->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>GatlingTurret</defName>
+		<label>gatling turret</label>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/Security/TurretImprovised</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>False</stealable>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>0.85</Flammability>
+			<WorkToBuild>5000</WorkToBuild>
+			<Mass>225</Mass>
+			<Beauty>-20</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="ComProperties_Explosive">
+				<explosiveRadius>3.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+			</li>
+			<li Class="CompProperties_Forbiddable" />
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>400</basePowerConsumption>
+			</li>
+			<li Class="CompPropertiesFlickable" />
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<description>A modified gatling drone with higher ammo capacity and rate of fire, unfortunately it had to sacrifice mobility for its upgrades</description>
+		<passability>PassThroughOnly</passability>
+		<pathCost>80</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<castEdgeShadows>true</castEdgeShadows>
+		<hasTooltip>true</hasTooltip>
+		<stuffCatagories>
+			<li>Metallic</li>
+		</stuffCatagories>
+		<costStuffCount>125</costStuffCount>
+		<costList>
+			<Steel>150</Steel>
+			<Component>5</Component>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<specialDisplayRadius>25.9</specialDisplayRadius>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_5mm_Gatling_Gun</turretGunDef>
+			<turretBurstCooldownTime>3</turretBurstCooldownTime>
+			<turretTopGraphicPath>Things/Weapons/5mm_Gatling_Gun</turretTopGraphicPath>
+		</building>
+		<researchPrerequsites>
+			<li>GunTurrets</li>
+		</researchPrerequsites>
+	</ThingDef>
+
+</Defs>
