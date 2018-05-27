@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<!-- . -->
+    <ThingDef ParentName="CC_BaseBullet">
+        <defName>Bullet_5mm_Gatling_Gun</defName>
+        <label>Gatling Gun bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>6</damageAmountBase>
+            <speed>65</speed>
+        </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="CC_BaseHumanMakeableGun">
+        <defName>Gun_5mm_Gatling_Gun</defName>
+        <label>5mm Gatling Gun</label>
+        <description>5mm Gatling Gun was mostly designed by coalition as a weapon of moral suppression. It boasts high capacity, high rate of fire and medium damage, also it is quite effective against massed enemies, but due to handheld nature of the device the projectile energy is sub-optimal. </description>
+        <graphicData>
+            <texPath>Things/Weapons/5mm_Gatling_Gun</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>InteractRifle</soundInteract>
+        <statBases>
+      <WorkToMake>100000</WorkToMake>
+      <Mass>10</Mass>
+      <AccuracyTouch>0.62</AccuracyTouch>
+      <AccuracyShort>0.54</AccuracyShort>
+      <AccuracyMedium>0.3</AccuracyMedium>
+      <AccuracyLong>0.18</AccuracyLong>
+      <RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
+      <Weapon_Bulk>2.0</Weapon_Bulk>
+    </statBases>
+    <costList>
+      <Steel>160</Steel>
+      <Component>20</Component>
+    </costList>
+		<recipeMaker>
+      <researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
+    </recipeMaker>
+    <techLevel>Industrial</techLevel>
+    <weaponTags>
+      <li>CoalitionGunHeavy</li>
+    </weaponTags>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.25</MoveSpeed>
+    </equippedStatOffsets>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Minigun</defaultProjectile>
+        <forcedMissRadius>0.5</forcedMissRadius>
+        <warmupTime>3.0</warmupTime>
+        <range>34</range>
+        <burstShotCount>60</burstShotCount>
+        <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+        <soundCast>CC_GatlingGunshot</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrels</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+</Defs>

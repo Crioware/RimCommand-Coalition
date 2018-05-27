@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<!-- . -->
+    <ThingDef ParentName="CC_BaseBullet">
+        <defName>Bullet_30mm_Revolver_Cannon</defName>
+        <label>Revolver Cannon Slug</label>
+        <graphicData>
+            <texPath>Things/Projectiles/30mm_Round</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Concussion</damageDef>
+            <damageAmountBase>15</damageAmountBase>
+            <speed>45</speed>
+        </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="CC_BaseHumanMakeableGun">
+        <defName>Gun_30mm_Revolver_Cannon</defName>
+        <label>30mm Revolver Cannon</label>
+        <description>Revolver Cannon is a weapon designed by Coalition aimed at bypassing armour. It fires a 30mm heavy low-velocity slug made either out of lead or tin. </description>
+        <graphicData>
+            <texPath>Things/Weapons/30mm_Revolver_Cannon</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>InteractRifle</soundInteract>
+        <statBases>
+            <WorkToMake>60000</WorkToMake>
+			<Mass>6.0</Mass>
+            <!--<MarketValue>688</MarketValue>-->
+            <AccuracyTouch>0.85</AccuracyTouch>
+            <AccuracyShort>0.75</AccuracyShort>
+            <AccuracyMedium>0.65</AccuracyMedium>
+            <AccuracyLong>0.55</AccuracyLong>
+            <RangedWeapon_Cooldown>5.5</RangedWeapon_Cooldown>
+            <Weapon_Bulk>1.4</Weapon_Bulk>
+        </statBases>
+        <costList>
+            <Steel>106</Steel>
+            <Component>12</Component>
+        </costList>
+        <equippedStatOffsets>
+        <MoveSpeed>-0.05</MoveSpeed>
+        </equippedStatOffsets>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>Bullet_30mm_Revolver_Cannon</defaultProjectile>
+                <warmupTime>1.6</warmupTime>
+                <range>30.2</range>
+                <burstShotCount>3</burstShotCount>
+                <ticksBetweenBurstShots>75</ticksBetweenBurstShots>
+                <soundCast>CC_RevolverCannonShot</soundCast>
+                <soundCastTail>GunTail_Heavy</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+            </li>
+        </verbs><weaponTags>
+        <li>CoalitionGun</li>
+        </weaponTags>
+        <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+    </ThingDef>
+</Defs>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+   <DamageDef Name="LocalInjuryBase" Abstract="True">
+    <workerClass>DamageWorker_AddInjury</workerClass>
+  </DamageDef>
+
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>Concussion</defName>
+    <label>Concussion</label>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been shot to death.</deathMessage>
+    <hediff>Crush</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Blunt</armorCategory>
+    <spreadOut>false</spreadOut>
+    <!--<explosionDamage>3</explosionDamage>
+    <explosionBuildingDamageFactor>3</explosionBuildingDamageFactor>
+    <explosionHeatEnergyPerCell>3</explosionHeatEnergyPerCell>
+    <explosionCellMote>Mote_BlastOptic</explosionCellMote>
+    <soundExplosion>Explosion_OpticBurst</soundExplosion>-->
+  </DamageDef>
+
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>Shrapnel</defName>
+    <label>Shrapnel</label>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been shredded to death.</deathMessage>
+    <hediff>Cut</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <spreadOut>true</spreadOut>
+    <explosionDamage>15</explosionDamage>
+    <explosionHeatEnergyPerCell>15</explosionHeatEnergyPerCell>
+    <explosionCellMote>Mote_BlastFlame</explosionCellMote>
+    <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+    <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+    <soundExplosion>CC_FlakCannonExplosion</soundExplosion>
+  </DamageDef>
+</Defs>

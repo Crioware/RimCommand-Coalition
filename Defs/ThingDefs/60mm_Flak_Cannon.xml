@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<!-- . -->
+    <ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Proj_FlakShot</defName>
+		<label>Flak Cannon Shot</label>
+		<thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectiles/60mm_Round</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<explosionRadius >4.8</explosionRadius >
+			<damageDef>Shrapnel</damageDef>
+            <speed>35</speed>
+			<damageAmountBase>25</damageAmountBase>
+			<explosionDelay>35</explosionDelay>
+            <flyOverhead>false</flyOverhead>
+		</projectile>
+	</ThingDef>
+
+    <ThingDef ParentName="CC_BaseHumanMakeableGun">
+        <defName>Gun_60mm_Flak_Cannon</defName>
+        <label>60mm Flak Cannon</label>
+        <description>60mm Flak Cannon designed originally to take down dropships, but also used in anti-personnel and anti-cover role, dealing grevious damage in the process. </description>
+        <graphicData>
+            <texPath>Things/Weapons/60mm_Flak_Cannon</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>InteractRifle</soundInteract>
+        <techLevel>Spacer</techLevel>
+        <statBases>
+            <WorkToMake>80000</WorkToMake>
+			<Mass>8.0</Mass>
+            <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+            <Weapon_Bulk>2.4</Weapon_Bulk>
+        </statBases>
+        <costList>
+            <Steel>140</Steel>
+            <Component>18</Component>
+        </costList>
+        <equippedStatOffsets>
+        <MoveSpeed>-0.15</MoveSpeed>
+        </equippedStatOffsets>
+        <verbs>
+			<li>
+				<label>Launch Flak Projectile</label>
+				<verbClass>Verb_LaunchProjectile</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>37.0</range>
+				<forcedMissRadius>1.0</forcedMissRadius>
+				<warmupTime>2.5</warmupTime>
+				<noiseRadius>6</noiseRadius>
+				<ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+				<soundCast>CC_FlakCannonShot</soundCast>
+                <soundCastTail>GunTail_Heavy</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Proj_FlakShot</defaultProjectile>
+			</li>
+		</verbs>
+        
+      
+        
+        
+        <weaponTags>
+        <li>CoalitionLauncher</li>
+        </weaponTags>
+        
+        
+        <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+    </ThingDef>
+</Defs>
